@@ -1,24 +1,35 @@
 
-var romanNumeral = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
+var romanNumeral = ['I', 'IV', 'V', 'X', 'L', 'C', 'D', 'M']
+console.log(romanNumeral[0]);
+function numerals(x) {
 
-function converter(number) {
-  if (number === 1) {
-    return userNumber = "I";
-  } else if (number === 5) {
-    return userNumber = "V";
-  } else if (number === 10) {
-    return userNumber = "X";
-  } else if (number === 50) {
-    return userNumber = "L";
-  } else if (number === 100) {
-    return userNumber = "C";
-  } else if (number === 500) {
-    return userNumber = "D";
-  } else if (number === 1000) {
-    return userNumber = "M";
-  } else {
-    console.log('error');
-  }
+}
+
+
+function converter(n) {
+  if (n === 1) {
+    return userNumber = romanNumeral[0];
+  } else if (n < 4) {
+    return userNumber = romanNumeral[0].repeat(n);
+  } else if (n === 4) {
+    return userNumber = romanNumeral[0] + romanNumeral[1];
+  } else if (n < 9) {
+    return userNumber = romanNumeral[1] + romanNumeral[0].repeat(n - 5);
+  } else if (n === 9) {
+    return userNumber = romanNumeral[0] + romanNumeral[2];
+  } else if (n === 10) {
+    return userNumber = romanNumeral[2];
+  // } else if (number === 50) {
+  //   return userNumber = "L";
+  // } else if (number === 100) {
+  //   return userNumber = "C";
+  // } else if (number === 500) {
+  //   return userNumber = "D";
+  // } else if (number === 1000) {
+  //   return userNumber = "M";
+  // } else {
+  //   console.log('error');
+  // }
 }
 
 
